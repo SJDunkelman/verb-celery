@@ -1,13 +1,13 @@
 services:
-  - type: worker
-    name: queue
+  - type: pserv
+    name: verb-celery
     region: ohio
     env: python
     buildCommand: "pip install -r requirements.txt"
     startCommand: "celery -A celery_app worker -Q messages_queue,agent_conversation_queue,node_processing_queue --loglevel=info --concurrency 4"
     autoDeploy: false
   - type: web
-    name: flower
+    name: verb-flower
     region: ohio
     plan: free
     env: python
