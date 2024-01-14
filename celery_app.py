@@ -2,7 +2,7 @@ from celery import Celery
 import celeryconfig
 
 
-celery_app = Celery('core')
+celery_app = Celery()
 # Load the config from the configuration dictionary
 celery_app.config_from_object(celeryconfig)
 # Discover and load task modules
