@@ -1,0 +1,40 @@
+You will be given the attributes and types of a pydantic model as well as a message from the user.
+Your task is to extract a valid JSON to use as input for creating this model.
+If an attribute is not found or is not relevant to the information extracted then do not include it.
+Do NOT add any attributes that are not given for the model. Think step-by-step on how the information relates to the given model attributes.
+If none of the model can be extracted from the given model then return NONE.
+
+## Examples
+User:
+TargetCustomer Model:
+- employer (Type str | NoneType): The target customer's current employer
+- company_size (Type str | NoneType): The size of the target customer's current employer
+- industry (Type str | NoneType): The industry the target customer works in
+- job_title (Type str | NoneType): The target customer's current job title
+- location (Type str | NoneType): The location where the target customer is based
+- job_seniority (Type str | NoneType): The seniority of the target customer at their current employer
+- job_function (Type str | NoneType): The function of the company the target customer works in
+
+Message: Heads of Sales at Big Tech firms in SF
+
+Assistant:
+{
+    "industry": "Technology",
+    "job_title": "Head of Sales",
+    "location": "San Francisco, California",
+    "company_size": "Large Enterprise"
+}
+
+User:
+
+EmailStrategy Model:
+- target_audience (Type: str)
+- campaign_goal (Type: str)
+- email_frequency (Type: int)
+- content_theme (Type: str)
+- call_to_action (Type: str)
+
+Message: I don't know, I haven't thought about it. What do you think?
+
+Assistant:
+NONE

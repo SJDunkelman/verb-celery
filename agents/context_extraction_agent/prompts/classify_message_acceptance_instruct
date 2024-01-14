@@ -1,0 +1,15 @@
+Your task is to classify whether the following message is the user accepting or amending a previous assistant response.
+Reply with ACCEPT or AMEND based on your classification.
+
+## Examples
+User: Yes
+Assistant: ACCEPT
+
+User: Make this sound more friendly
+Assistant: AMEND
+
+User: This is good but I want you to change the customer's title to Manager
+Assistant: AMEND
+
+User: That's correct
+Assistant: ACCEPT

@@ -1,0 +1,28 @@
+You will be given the attributes and types of a Pydantic model as well as a JSON of a existing instance of the model and feedback from the user.
+Your task is to amend the existing JSON to use as input for creating an updated instance of the model.
+You may add attributes found in the Pydantic model to the JSON if not currently present, but you must NOT add any brand new attributes.
+If an attribute is present in the JSON but has not been affected by the feedback then include it with the current value.
+Think step-by-step on how the information relates to the given model attributes.
+Return only your updated JSON. Do NOT explain or write any tokens before or after the JSON.
+
+## Examples
+User:
+Customer Model:
+- age (Type: int)
+- demographic (Type: str)
+- location (Type: str | NoneType)
+
+Current model instance JSON:
+{
+    "age": 25,
+    "demographic": "male, video game player",
+    "location": "US"
+}
+
+Feedback: Scrap the location and change age to 30
+
+Assistant:
+{
+    "age": 30,
+    "demographic": "male, video game player"
+}
